@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,800&display=swap" rel="stylesheet" >
+        <link rel="stylesheet" href="style.css" >
+        <title>JustStreamIt</title>
+    </head>
+
+    <body id="bodys">
+        <header>
+            <nav> 
+			<div class="nav-bar">
+            
+                <ul>
+                    <li style="float: left;"><a href="#JustStreamIt">JustStreamIt</a></li>
+                    <li style="float: right;"><a href="#contact">Contact</a></li>
+                    <li style="float: right;"><a href="#categorie">Catégories</a></li>
+                    <li style="float: right;"><a class="active" href="#accueil">Accueil</a></li>
+                </ul>
+			</div> 
+			</nav> 
+        </header>
+        <main id="movies"> 
+			<h1 class="card-title">Meilleur film</h1>
+			<section class="carousel">
+                <ul class="carousel-items">
+                    <li class="carousel-item">
+                        <div class="card" id="theBest">
+
+                        </div>
+                        <br >
+                    </li>
+                </ul>
+            </section>             
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div id="displayInfo"></div>
+                    </div>
+                </div>		
+            <h1>Films les mieux notés</h1>
+            <div class="carousel">
+
+                <ul class="carousel-items" id="best_movies">
+                
+                </ul>
+			</div>
+
+            <h1>Action</h1>
+            <div class="carousel">
+                <ul class="carousel-items" id="id_action">
+                    
+                </ul>
+			</div>
+            <h1>Comedy</h1>
+            <div class="carousel">
+                <ul class="carousel-items" id="id_comedy">
+                    
+                </ul>
+			</div>
+			<h1>Drama</h1>
+            <div class="carousel">
+                <ul class="carousel-items" id="id_drama">
+                    
+                </ul>
+			</div>
+        </main>
+
+        <script src="api.js"></script>
+    </body>
+</html>

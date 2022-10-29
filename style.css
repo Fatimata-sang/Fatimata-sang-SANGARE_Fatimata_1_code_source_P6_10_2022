@@ -1,0 +1,366 @@
+body#bodys {
+     background-color:  #111111ed;
+    
+}
+
+
+/********************************
+* Barre de menu
+*********************************/
+li {
+    float: left;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+	color: #f5f5f5;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	z-index : 9
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+	border-radius: 3px;
+}
+
+.contenant {
+  position: relative;
+  text-align: center;
+  color: red;
+}
+
+.texte_centrer {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+/********************************
+* image
+*********************************/
+
+#image{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	color: #f5f5f5;
+	text-align: center;
+}
+div#image img {
+    min-width: 20%;
+	float: left;
+	padding: inherit;
+}
+
+div#infoBest {
+    padding: 2%;
+}
+/********************************
+SCROLL BARRE
+*********************************/
+.carousel-control-next-icon {
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e);
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: no-repeat 50%/100% 100%;
+}
+
+/********************************
+centrer avec flexbox
+*********************************/
+.box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height:100vh;
+}
+/********************************
+modal
+*********************************/
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: inherit; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #FFFFFF;
+  margin: auto;
+  /*padding: 20px;*/
+  border: 1px solid #888;
+  width: 20%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaaaaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/********************************
+* Basics
+*********************************/
+ {
+    box-sizing: border-box;
+}
+
+
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: #3d4852;
+    font-family: 'Muli', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+h2.card-title {
+    float: right;
+	color: #f5f5f5;
+	
+}
+h1 {
+    font-size: 2rem;
+    margin: 5rem auto 1rem;
+    line-height: 1;
+	color: #f5f5f5;
+}
+
+h2 {
+    margin-top: 10%; 
+	color: red;
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+a {
+    color: inherit;
+    transition: 0.25s all ease-in-out;
+}
+
+a:visited {
+	color: #f5f5f5;
+}
+
+a:hover,
+a:focus,
+a:active {
+    background-color: #3d4852;
+    color: white;
+}
+
+a:focus {
+    outline: thin solid #3d4852;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+a.button {
+    align-items: center;
+    background-color: #3d4852;
+    border: 1px solid #3d4852;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.25rem 0.75rem;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+a.button:hover,
+a.button:focus {
+    background-color: #58636F;
+    box-shadow: 0 0 2px 2px #bac6d3;
+}
+
+a.button:focus {
+    outline: 1px solid #3d4852;
+}
+
+a.button:visited {
+    color: #fff;
+}
+
+ul {
+    margin: 0 0 1.5rem;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+}
+
+svg {
+    fill: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+div#displayInfo img {
+    min-height: 1px;
+    min-width: 5px;
+    max-width: -webkit-fill-available;
+}
+
+/*div#image img {
+	width: -webkit-fill-available;
+	height: -webkit-fill-available;
+}
+*/
+
+main#movies img {
+    height: auto;
+    margin-bottom: .5rem;
+    max-width: calc(100% + 2rem);
+    position: relative;
+    left: 1rem;
+    right: 1rem;
+}
+
+p {
+    margin: 0 0 .5rem;
+}
+
+main {
+    padding: 1rem 2rem;
+    margin: auto;
+}
+
+header {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.card {
+    border: 5px solid #1f68e500;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/********************************
+* Carousel styles
+**********************************/
+.carousel-items {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+    flex: 1 0 250px;
+    margin-left: 1rem;
+    scroll-snap-align: start;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3d4852;
+    border-radius: 3px;
+
+
+
+
+
+/********************************
+* Breakpoints
+*********************************/
+@media screen and (min-width: 576px) {
+    .carousel-item {
+        flex-basis: 300px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+        font-size: 1.125rem;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    .carousel-item {
+        flex-basis: 325px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .carousel-item {
+        flex-basis: 450px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+        font-size: 1.25rem;
+    }
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}

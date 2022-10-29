@@ -109,12 +109,13 @@ async function meilleursFilms(page) {
 }
 
 // Fucntion for the movies categories
-async function categoriesFilms(page, genres, id_element) {
+async function categoriesFilms(page, genres_movies, id_element) {
  
 	var num_movies = 0
 	for (var i = 1; i <= page; i++ ) {
 		// Recuperation des données des meilleurs films par API et trier par ordre des plus aimés
-		var url_movies_by_genre = "http://localhost:8000/api/v1/titles/?genre=" + genres;
+		var url_movies_by_genre = "http://localhost:8000/api/v1/titles/?genre=" + genres_movies + "&page=" + i + "&sort_by=-imdb_score";
+		console.log(url_movies_by_genre)
 		var data = await get_data(url_movies_by_genre);
 		//console.log(data)
 		// Recuperation et ajout de tous les films (meilleurs) au DOM HTML 
@@ -124,7 +125,7 @@ async function categoriesFilms(page, genres, id_element) {
 			var genres = data.results[j].genres.toString().replace("'", "&#39");
 			var writers = data.results[j].writers.toString().replace("'", "&#39");
 			var actors = data.results[j].actors.toString().replace("'", "&#39");
-			if (num_movies === 8) { console.log(data); break; }
+			if (num_movies === 8) { break; }
 			var script_html = `<li class="carousel-item"> 
 								  <div id="B${data.results[j].id}" , class="card" value='<img src="${data.results[j].image_url}" ; alt="${title}"/><br><b>Titre:</b> ${title}<br><b>Genre:</b> ${genres}<br><b>Date de sortie:</b> ${data.results[j].year}<br><b>Votes:</b> ${data.results[j].votes}<br><b>Score Imdb:</b> ${data.results[j].imdb_score}<br><b>Réalisateur:</b> ${writers}<br><b>Les acteurs:</b> ${actors}'>
 								  <img src="${data.results[j].image_url}" ; class="best_class"; style="max-width:100%;height:auto; alt="${title}" onclick = "myfunctionModal('B${data.results[j].id}')"/>

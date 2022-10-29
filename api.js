@@ -10,7 +10,7 @@ window.onload = function(){
 }
 
 
-// Fucntion for the best movie
+// Fonction pour le meilleur film
 async function meilleurFilm(url) {
 	// Recuperation des données des meilleurs films par API
 	let best_url = url + "?imdb_score_min=9&sort_by=-imdb_score,-votes";
@@ -20,7 +20,7 @@ async function meilleurFilm(url) {
 	var genres = data.results[0].genres.toString().replace("'", "&#39");
 	var writers = data.results[0].writers.toString().replace("'", "&#39");
 	var actors = data.results[0].actors.toString().replace("'", "&#39");
-	// le meulleur films 
+	// le meilleur films
 	var script_html = `<div id="image" , class="card" value='<img src="${data.results[0].image_url}" ; alt="${title}"/><br><b>Titre:</b> ${title}<br><b>Genre:</b> ${genres}<br><b>Date de sortie:</b> ${data.results[0].year}<br><b>Votes:</b> ${data.results[0].votes}<br><b>Score Imdb:</b> ${data.results[0].imdb_score}<br><b>Réalisateur:</b> ${writers}<br><b>Les acteurs:</b> ${actors}'>
 						   <img src="${data.results[0].image_url}" ; style="max-width:100%;height:auto; alt="${data.results[0].title}" onclick = "myfunctionModal('image')"/>
 						   <div id="infoBest">
@@ -41,7 +41,7 @@ async function meilleurFilm(url) {
 } 
 
 
-
+// fonction fetch data
 function get_data(url) {
 
     return fetch(url)
@@ -50,13 +50,13 @@ function get_data(url) {
 };
 
 
-// Get the modal
+// Pour obtenir le modal
 var modal = document.getElementById("myModal");
 
-// Get the <span> element that closes the modal
+// Pour obtenir l'élément <span> qui ferme le modal
 var span = document.getElementsByClassName("close")[0];
 
-// Fucntion madol for onclick
+// Fonction modal pour onclick
 function myfunctionModal(id){
 	var divValue = document.getElementById(id).getAttribute('value');
 	var displayInfo = document.getElementById("displayInfo");
@@ -66,29 +66,29 @@ function myfunctionModal(id){
 	modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// Lorsque l'utilisateur clique sur <span> (x), fermez le modal
 span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// Lorsque l'utilisateur clique n'importe où en dehors du modal, fermez-le
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
 
-// Fucntion for the best movies
+// Fonction pour les meilleurs films
 async function meilleursFilms(page) {
  
-	var num_movies = 0
+	var num_movies = 0Fonction pour les catégories de films
 	for (var i = 1; i <= page; i++ ) {
 		
 		// Recuperation des données des meilleurs films par API et trier par ordre des plus aimés
 		var best_url = "http://localhost:8000/api/v1/titles/?imdb_score_min=9.3&page=" + i + "&sort_by=-imdb_score,-votes";
 		var data = await get_data(best_url);
 		
-		// Recuperation et ajout de tous les films (meilleurs) au DOM HTML 
+		// ajout des films (meilleurs) au DOM HTML
 		for (var j = 1; j <= Object.keys(data).length; j++ ) {
 			num_movies += 1
 			var title = data.results[j].title.toString().replace("'" , "&#39");
@@ -108,17 +108,15 @@ async function meilleursFilms(page) {
 	
 }
 
-// Fucntion for the movies categories
+// Fonction pour les catégories de films
 async function categoriesFilms(page, genres_movies, id_element) {
  
 	var num_movies = 0
 	for (var i = 1; i <= page; i++ ) {
-		// Recuperation des données des meilleurs films par API et trier par ordre des plus aimés
+		// Recuperation des données des meilleurs films par categories avec API
 		var url_movies_by_genre = "http://localhost:8000/api/v1/titles/?genre=" + genres_movies + "&page=" + i + "&sort_by=-imdb_score";
-		console.log(url_movies_by_genre)
 		var data = await get_data(url_movies_by_genre);
-		//console.log(data)
-		// Recuperation et ajout de tous les films (meilleurs) au DOM HTML 
+		// ajout des films au DOM HTML
 		for (var j = 0; j <= Object.keys(data).length; j++ ) {
 			num_movies += 1
 			var title = data.results[j].title.toString().replace("'" , "&#39");

@@ -1,6 +1,5 @@
 window.onload = function(){
 	var url = "http://localhost:8000/api/v1/titles/";
-	var url_best_movies = "http://localhost:8000/api/v1/titles/?imdb_score_min=9&sort_by=-imdb_score,-votes";
 	meilleurFilm(url);
 	meilleursFilms(2);
 	categoriesFilms(2, "Action", "id_action")
@@ -60,7 +59,6 @@ var span = document.getElementsByClassName("close")[0];
 function myfunctionModal(id){
 	var divValue = document.getElementById(id).getAttribute('value');
 	var displayInfo = document.getElementById("displayInfo");
-    console.log(divValue);
 	displayInfo.innerHTML = "";
 	displayInfo.innerHTML += divValue;
 	modal.style.display = "block";

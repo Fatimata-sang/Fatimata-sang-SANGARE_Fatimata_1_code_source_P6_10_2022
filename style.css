@@ -249,8 +249,8 @@ div#displayInfo img {
 main#movies img {
     height: auto;
     margin-bottom: .5rem;
-    max-width: calc(100% + 2rem);
-    position: relative;
+    /*max-width: calc(100% + 2rem);
+    position: relative;*/
     left: 1rem;
     right: 1rem;
 }

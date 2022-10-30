@@ -81,7 +81,7 @@ window.onclick = function(event) {
 // Fonction pour les meilleurs films
 async function meilleursFilms(page) {
  
-	var num_movies = 0Fonction pour les catégories de films
+	var num_movies = 0;
 	for (var i = 1; i <= page; i++ ) {
 		
 		// Recuperation des données des meilleurs films par API et trier par ordre des plus aimés
